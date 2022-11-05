@@ -1,4 +1,6 @@
 # STYLING CAPSTONE PROJECT
+Repo ini hanya untuk menyimpan percobaan pembuatan pages yang dibutuhkan untuk project capstone beserta styling agar terlihat menarik dan responsive. 
+Setelah dari sini, baru project akan dilanjutkan dengan pembuatan menggunakan library ReactJS. 
 
 ## Instructions
 Berikut ini hal yang perlu dilakukan : 
