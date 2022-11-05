@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./index.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Halaman Detail Resep</title>
+</head>
+<body>
+  <header>
+    <h1>Food Recipe App</h1>
+  </header>
+  <main>
+    <div class="search-container">
+      <input class="search-input" type="text" name="searchInput" id="searchInput">
+      <button class="search-btn" id="searchBtn">Search</button>
+    </div>
+
+    <div class="food-recipe" id="foodRecipe">
+      <div class="recipe-info">
+        <h2 class="recipe-title"></h2>
+        <figure class="recipe-img">
+          <img>
+          <figcaption></figcaption>
+        </figure>
+        <p class="prep-time"></p>
+      </div>
+
+      <section id="equipmentSection" class="equipment-section">
+        <!-- <h3>Equipments</h3> -->
+        <!-- <ul id="equipments"></ul> -->
+      </section>
+
+      <section id="ingredientSection" class="ingredient-section">
+        <!-- <h3>Ingredients</h3> -->
+        <!-- <ul id="ingredients"></ul> -->
+      </section>
+
+      <section id="stepsSection" class="steps-section">
+        <h3>Steps</h3>
+        <ol id="recipeSteps"></ol>
+      </section>
+
+      <section id="tasteSection" class="taste-section">
+        <h3>Taste Widget</h3>
+        <div class="taste-container" id="tasteContainer"></div>
+        <ul id="tasteWidget"></ul>
+      </section>
+
+      <section id="nutrientSection" class="nutrient-section">
+        <!-- <h3>Nutrient Widget</h3> -->
+      </section>
+
+      <a class="source-link" id="sourceLink" target="_blank">Recipe Source</a>
+    </div>
+  </main>
+</body>
+</html>
