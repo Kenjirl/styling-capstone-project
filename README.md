@@ -6,7 +6,11 @@ Berikut ini hal yang perlu dilakukan :
 2. Buat 2 palet warna untuk mode terang dan gelap (bisa pakai color hunt). 
 3. Untuk styling layout, penempatan div dan lain-lain boleh diubah, kalau ngga diubah juga nggapapa, ubah warnanya aja. 
 4. Untuk halaman lain nanti menyusul, atau bisa kalian yang styling sendiri : 
-   - Buat 1 folder baru untuk setiap halaman yang mau ditambah, misal HomePage.
+   - Buat 1 folder baru untuk setiap halaman yang mau ditambah. Kebutuhan kita sejauh ini sih : 
+     - Home Page (kalau bisa berisi informasi mengenai web-app apa yang dibuat, lebih ke Landing Page sih), 
+     - Random Recipes List Page (halaman yang memuat banyak recipe random, recipe nya gaperlu terlalu detail), 
+     - Login Page, 
+     - Register Page. 
    - Coba pelajari dan sekalian buat akun baru di spoonacular.com biar bisa pakai API-nya. Setiap user punya API key masing-masing seperti pada [DetailPage/index.js](DetailPage/index.js). 
    - Atau bisa juga kalau mau sekedar menambahkan bagian header (navbar responsive) dan footer (copyright, detail sosmed, dll). 
 
