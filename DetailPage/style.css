@@ -3,17 +3,17 @@
   --color-2: #CA965C;
   --color-3: #EEC373;
   --color-4: #F4DFBA;
-  --color-4: #41444B;
-  --color-5: #F9F9F9;
+  --color-5: #41444B;
+  --color-6: #F9F9F9;
 }
 
 [data-theme="dark"] {
-  --color-1: #876445;
+  --color-1: #F4DFBA;
   --color-2: #CA965C;
   --color-3: #EEC373;
-  --color-4: #F4DFBA;
-  --color-4: #F9F9F9;
-  --color-5: #41444B;
+  --color-4: #876445;
+  --color-5: #F9F9F9;
+  --color-6: #41444B;
 }
 
 ::-webkit-scrollbar {
@@ -34,7 +34,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-4); 
+  background: var(--color-5); 
 }
 
 * {
@@ -56,12 +56,21 @@ a, button {
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
   background-color: var(--color-1);
-  color: var(--color-5);
+  color: var(--color-6);
+  padding: 1em;
+}
+
+header img {
+  width: 75px;
+  border-radius: 50%;
 }
 
 header h1 {
-  padding: 1em;
   text-align: center;
 }
 
@@ -88,6 +97,7 @@ main {
   width: 100%;
   border-radius: 10px 10px 0 0;
   background-color: var(--color-4);
+  color: var(--color-5);
 }
 
 .recipe-title {
@@ -122,7 +132,8 @@ section {
   padding: 1em 0;
   border-radius: 10px;
   overflow: hidden;
-  background-color: var(--color-5);
+  background-color: var(--color-6);
+  color: var(--color-5);
 }
 
 section:has(ol, ul) {
@@ -222,6 +233,10 @@ ul {
   max-width: 350px;
 }
 
+canvas {
+  background-color: #F9F9F9;
+}
+
 /* NUTRIENT WIDGET */
 
 .nutrient-section {
@@ -232,10 +247,35 @@ ul {
   margin-bottom: 1em;
 }
 
+#spoonacular-nutrition-label,
+#spoonacular-nutrition-ingredient-list {
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 300px;
+  padding: .5rem;
+  font-family:Helvetica,Arial,sans-serif,sans-serif;
+  font-size:14px;
+  color:#333;
+  background-color:#fff
+}
+
+#spoonacular-nutrition-ingredient-list {
+  text-transform:uppercase
+}
+
+#spoonacular-nutrition-label div.separator {
+  border-bottom:10px solid black
+}
+
+#spoonacular-nutrition-label>div:first-of-type{border-bottom:10px solid black;padding:0 0 .25rem 0;margin:0 0 .5rem 0}#spoonacular-nutrition-label>div:first-of-type p{margin:0;font-size:16px}#spoonacular-nutrition-label table{border-collapse:unset;border-spacing:0;font-size:14px;width:100%}#spoonacular-nutrition-label table td{font-weight:normal;text-align:left;padding:.3rem 0;border-top:1px solid black;vertical-align:middle}#spoonacular-nutrition-label table .empty{width:1rem;border-top:0}#spoonacular-nutrition-label table #calorie-summary td{font-size:33px;border:0 none!important}#spoonacular-nutrition-label b{font-weight:900}#spoonacular-nutrition-label .separator td{border-top-width:5px}#spoonacular-nutrition-label table:first-of-type td:last-child{text-align:right!important}#spoonacular-nutrition-label table:nth-of-type(2) td:first-child{text-align:left!important}#spoonacular-nutrition-label table:nth-of-type(2) td:nth-of-type(2){text-align:right!important}#spoonacular-nutrition-label .small{font-size:11px}#spoonacular-nutrition-label h1.separator{border-bottom:1px solid black}#spoonacular-nutrition-label h1{font-size:35px;margin:0 0 .25rem 0}
+
 #spoonacular-nutrition-label {
   max-width: 100%;
-  max-height: 100vh;
+  max-height: calc(100vh - 20%);
   overflow-y: auto;
+  border: 1px solid var(--color-5);
+  background-color: var(--color-6);
+  color: var(--color-5);
 }
 
 #spoonacular-nutrition-label > div > h1 {
@@ -270,6 +310,12 @@ ul {
   justify-content: center;
   text-align: center;
   text-transform: lowercase;
+}
+
+.change-theme {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
 }
 
 @media (min-width: 750px) {

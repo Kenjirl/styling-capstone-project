@@ -169,7 +169,7 @@ const getTasteWidget = id => {
           labels:[...tasteNameArr],
           datasets:[{
             label:"",
-            backgroundColor:"rgb(38,159,202, 0.2)",
+            backgroundColor:"rgba(38,159,202, 0.2)",
             borderColor:"rgb(38,159,202)",
             pointBackgroundColor:"rgb(38,159,202)",
             data:[...tasteValueArr]
@@ -299,4 +299,14 @@ $('#searchBtn').click(() => {
   const searchItem = $('#searchInput').val();
   // console.log(searchItem);
   getRecipe(searchItem);
+});
+
+$('#changeTheme').click(() => {
+  const bodyElement = $('body').attr('data-theme');
+
+  if (typeof bodyElement !== 'undefined' && bodyElement !== false) {
+    $('body').removeAttr('data-theme');
+  } else {
+    $('body').attr('data-theme','dark');
+  }
 });
