@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
   <script src="./index.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
   <title>Home Page</title>
 </head>
 <body>
@@ -29,28 +30,43 @@
         <input type="radio" name="theme" id="dark">
       </fieldset>
     </form>
-    <nav>
+    <nav id="desktop" class="desktop">
       <a href="#description" tabindex="1">Main</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
+    </nav>
+    <button class="mobile-nav-toggle" type="button"><i data-feather="menu"></i></button>
+    <nav id="mobile" class="mobile">
+      <div class="logo">
+        <img src="../public/logo.png" alt="better me's logo">
+        <h1>Better Me</h1>
+      </div>
+      <button class="mobile-nav-toggle" type="button" tabindex="-1"><i data-feather="x"></i></button>
+      <div class="container">
+        <a class="mobile-nav-item" href="#description">Description</a>
+        <a class="mobile-nav-item" href="#services">Services</a>
+        <a class="mobile-nav-item" href="#about">About</a>
+        <a class="mobile-nav-item" href="#">Recipes List</a>
+        <a class="mobile-nav-item" href="#">Recipes by Calories</a>
+      </div>
     </nav>
   </header>
   <main>
     <div class="parallax img1">
       <div class="parallax-caption">
-        <span>FOOD RECIPE APP</span>
+        <span>#FOOD RECIPE APP</span>
       </div>
     </div>
     <div id="description" class="description"></div>
     <div class="parallax img2">
       <div class="parallax-caption">
-        <span>SERVICES</span>
+        <span>#SERVICES</span>
       </div>
     </div>
     <div id="services" class="services"></div>
     <div class="parallax img3">
       <div class="parallax-caption">
-        <span>MEET THE DEVELOPERS</span>
+        <span>#MEET THE DEVELOPERS</span>
       </div>
     </div>
     <div id="about" class="about"></div>

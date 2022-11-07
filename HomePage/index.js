@@ -1,3 +1,7 @@
+$(window).on('load', () => {
+  setTheme();
+});
+
 $(function(){
   $(window).scroll(function(){
     if($(this).scrollTop() > 10){
@@ -29,6 +33,16 @@ $('[name="theme"]').each(function(index) {
   });
 });
 
-$(window).on('load', () => {
-  setTheme();
+$('.mobile-nav-item').each(function(index) {
+  $(this).click(() => {
+    $('nav#mobile').removeClass('open');
+  });
 });
+
+$('.mobile-nav-toggle').each(function(index) {
+  $(this).click(() => {
+    $('nav#mobile').toggleClass('open');
+  })
+});
+
+feather.replace();
