@@ -2,17 +2,6 @@ $(window).on('load', () => {
   setTheme();
 });
 
-$(function(){
-  $(window).scroll(function(){
-    if($(this).scrollTop() > 10){
-      $('header').addClass('sticky');
-    }
-    else{
-      $('header').removeAttr('class');
-    }
-  });
-});
-
 const storeTheme = theme => {
   localStorage.setItem("web-theme", theme);
 }
@@ -33,9 +22,10 @@ $('[name="theme"]').each(function(index) {
   });
 });
 
-$('.mobile-nav-item').each(function(index) {
+$('.nav-sub-item').each(function(index) {
   $(this).click(() => {
     $('nav#mobile').removeClass('open');
+    $('#dropdown-item-container').removeClass('open');
   });
 });
 
@@ -43,6 +33,10 @@ $('.mobile-nav-toggle').each(function(index) {
   $(this).click(() => {
     $('nav#mobile').toggleClass('open');
   })
+});
+
+$('#dropdown-toggle').click(() => {
+  $('#dropdown-item-container').toggleClass('open');
 });
 
 feather.replace();
