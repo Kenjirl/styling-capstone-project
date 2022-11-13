@@ -1,19 +1,10 @@
-:root {
-  --color-1: #876445;
-  --color-2: #CA965C;
-  --color-3: #EEC373;
-  --color-4: #F4DFBA;
-  --color-5: #41444B;
-  --color-6: #F9F9F9;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
 
-[data-theme="dark"] {
-  --color-1: #F4DFBA;
-  --color-2: #CA965C;
-  --color-3: #EEC373;
-  --color-4: #876445;
-  --color-5: #F9F9F9;
-  --color-6: #41444B;
+:root {
+  --color-1: #41444B;
+  --color-2: #F9F9F9;
+  /* --color-1: #F9F9F9;
+  --color-2: #41444B; */
 }
 
 ::-webkit-scrollbar {
@@ -34,44 +25,45 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-5); 
+  background: var(--color-1); 
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 
 input, a, button {
   min-width: 44px;
   min-height: 44px;
-  padding: 0 .5em;
+  padding: 0 1em;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1em;
   transition: all .3s ease;
 }
 
 a, button {
-  font-weight: 900;
-  cursor: pointer;
-}
-
-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1em;
-  background-color: var(--color-1);
-  color: var(--color-6);
-  padding: 1em;
-}
-
-header img {
-  width: 75px;
-  border-radius: 50%;
-}
-
-header h1 {
+  font-weight: 700;
+  text-decoration: none;
+  outline: none;
+  color: var(--color-1);
+  background-color: var(--color-2);
+  border: 2px solid var(--color-1);
+  border-radius: 5px;
   text-align: center;
+  cursor: pointer;
+}
+
+a:hover, button:hover,
+a:active, button:active,
+a:focus, button:focus {
+  background-color: var(--color-1);
+  color: var(--color-2);
 }
 
 main {
@@ -79,9 +71,11 @@ main {
   max-width: 500px;
   margin: 0 auto;
   padding: 0 1em;
+  background-color: var(--color-2);
+  overflow: hidden;
 }
 
-.search-container {
+.search-bar {
   max-width: 500px;
   margin: 1em auto;
   display: flex;
@@ -91,13 +85,16 @@ main {
 
 .search-input {
   flex-grow: 1;
+  border: 1px solid var(--color-1);
 }
 
 .food-recipe {
   width: 100%;
+  border: 2px solid var(--color-1);
   border-radius: 10px 10px 0 0;
-  background-color: var(--color-4);
-  color: var(--color-5);
+  background-color: var(--color-2);
+  color: var(--color-1);
+  translate: 0 2px;
 }
 
 .recipe-title {
@@ -127,20 +124,21 @@ main {
   font-size: .8em;
 }
 
-section {
+.section {
   margin: .5em 1em;
   padding: 1em 0;
+  border: 1px solid var(--color-1);
   border-radius: 10px;
+  background-color: var(--color-2);
+  color: var(--color-1);
   overflow: hidden;
-  background-color: var(--color-6);
-  color: var(--color-5);
 }
 
-section:has(ol, ul) {
+.section:has(ol, ul) {
   padding: 1em 2em;
 }
 
-section h3 {
+.section h3 {
   display: block;
   width: 100%;
   text-align: center;
@@ -148,8 +146,8 @@ section h3 {
   font-size: .9em;
 }
 
-section ul,
-section ol {
+.section ul,
+.section ol {
   font-size: .8em;
 }
 
@@ -213,6 +211,7 @@ ul {
 
 .spoonacular-name {
   display: inline-block;
+  color: #41444B;
 }
 
 .spoonacular-amount {
@@ -221,7 +220,7 @@ ul {
 
 /* TASTE WIDGET */
 
-.taste-section {
+.taste.section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -239,11 +238,11 @@ canvas {
 
 /* NUTRIENT WIDGET */
 
-.nutrient-section {
+.nutrient.section {
   padding: 1em;
 }
 
-.nutrient-section h3 {
+.nutrient.section h3 {
   margin-bottom: 1em;
 }
 
@@ -273,9 +272,9 @@ canvas {
   max-width: 100%;
   max-height: calc(100vh - 20%);
   overflow-y: auto;
-  border: 1px solid var(--color-5);
-  background-color: var(--color-6);
-  color: var(--color-5);
+  border: 1px solid var(--color-1);
+  background-color: var(--color-2);
+  color: var(--color-1);
 }
 
 #spoonacular-nutrition-label > div > h1 {
@@ -291,31 +290,13 @@ canvas {
 .source-link {
   display: none;
   width: fit-content;
-  margin: 0 auto;
-  padding: 0;
+  margin: 0 auto 10px auto;
   /* display: flex; */
   align-items: center;
   justify-content: center;
   text-align: center;
   text-transform: lowercase;
-}
-
-.source {
-  /* display: none; */
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-transform: lowercase;
-}
-
-.change-theme {
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
+  color: var(--color-1);
 }
 
 @media (min-width: 750px) {
@@ -324,7 +305,7 @@ canvas {
     /* background-color: #41444B; */
   }
 
-  section {
+  .section {
     margin: 0;
     font-size: 1.2em;
   }
@@ -364,15 +345,15 @@ canvas {
     font-size: 1em;
   }
 
-  section h3 {
+  .section h3 {
     font-size: 1.2em;
   }
 
-  .steps-section {
+  .steps.section {
     grid-column: 1 / 3;
   }
 
-  .taste-section {
+  .taste.section {
     display: flex;
     flex-direction: column;
     align-items: center;

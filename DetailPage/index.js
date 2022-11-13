@@ -4,7 +4,6 @@ const API_KEY = '156b4218b04147e690781d4aff77412c';
 $( window ).on( "load", function() {
   console.log( "window loaded" );
   getRecipe('burger');
-  // getTasteWidget(69095);
 });
 
 let equipmentPos = { top: 0, left: 0, x: 0, y: 0 };
@@ -297,16 +296,7 @@ const getRecipe = q => {
 
 $('#searchBtn').click(() => {
   const searchItem = $('#searchInput').val();
-  // console.log(searchItem);
   getRecipe(searchItem);
 });
 
-$('#changeTheme').click(() => {
-  const bodyElement = $('body').attr('data-theme');
-
-  if (typeof bodyElement !== 'undefined' && bodyElement !== false) {
-    $('body').removeAttr('data-theme');
-  } else {
-    $('body').attr('data-theme','dark');
-  }
-});
+feather.replace()

@@ -56,9 +56,10 @@ input, a, button {
   min-width: 44px;
   min-height: 44px;
   padding: 0 1em;
-  transition: all .3s ease;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
+  transition: all .3s ease;
+  z-index: 100;
 }
 
 a, button {
@@ -82,7 +83,7 @@ a:focus, button:focus {
   color: var(--color-2);
 }
 
-a:active, button:focus {
+a:active, button:active {
   -webkit-transform: translate(0, 5px);
   transform: translate(0, 5px);
   box-shadow: none;
@@ -106,7 +107,7 @@ header {
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr;
   background-color: var(--color-2);
-  transition: all .3s ease;
+  /* transition: all .3s ease; */
   z-index: 100;
 }
 
@@ -133,13 +134,14 @@ header {
 }
 
 .logo img {
-  width: 50px;
-  outline: 3px solid var(--color-2);
-  outline-offset: -2px;
+  width: 75px;
+  outline: 2px solid var(--color-2);
+  outline-offset: -1px;
   border-radius: 50%;
 }
 
 .logo h1 {
+  display: none;
   font-size: 1.5em;
   color: var(--color-1);
   text-align: center;
@@ -170,8 +172,8 @@ header {
 }
 
 input[type="radio"] {
-  min-width: 10px;
-  min-height: 10px;
+  min-width: 15px;
+  min-height: 15px;
   padding: 0;
   appearance: none;
   outline: 2px solid var(--radio-color, currentColor);
@@ -216,10 +218,10 @@ nav.desktop {
 
 nav.mobile {
   position: absolute;
-  top: 43px;
+  top: 47px;
   left: -600px;
   width: 100%;
-  min-height: calc(100vh - 43px);
+  min-height: calc(100vh - 47px);
   padding: 0 1.5em 1em 1.5em;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -227,10 +229,18 @@ nav.mobile {
   align-items: start;
   background-color: var(--color-2);
   transition: all .5s ease;
+  z-index: 200;
 }
 
 nav.mobile.open {
   left: 0;
+}
+
+.mobile-btn-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav.mobile .container {
@@ -293,12 +303,12 @@ main {
 }
 
 .services {
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   padding: 8em 1em;
   gap: 1em;
-  min-height: 100vh;
 }
 
 .services p {
@@ -324,7 +334,7 @@ main {
   background-color: #F9F9F9;
 }
 
-.service span {
+.service h3 {
   width: 100%;
   padding: 1em 0;
   background-color: var(--color-2);
@@ -349,7 +359,17 @@ main {
   box-shadow: none;
 }
 
-.about {min-height: 100vh;}
+.about {
+  min-height: 100vh;
+  padding: 8.5em 1em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.about h3 {
+  padding: 1em 0;
+}
 
 /* MAKE PARALLAX */
 
@@ -362,23 +382,22 @@ main {
   background-size: cover;
 }
 
-.img1 { background-image: url('../public/prlx-bg-1.jpg'); }
+.parallax.img1 { background-image: url('../public/prlx-bg-1.jpg'); }
 
-.img2 { background-image: url('../public/prlx-bg-2.jpg'); }
+.parallax.img2 { background-image: url('../public/prlx-bg-2.jpg'); }
 
-.img3 { background-image: url('../public/prlx-bg-3.jpg'); }
+.parallax.img3 { background-image: url('../public/prlx-bg-3.jpg'); }
 
 .parallax-caption {
   position: absolute;
   top: 50%;
   width: 100%;
   text-align: center;
-  padding: 1em 2em;
+  padding: 1em;
   background-color: var(--color-2);
 }
 
-.parallax-caption span {
-  width: 100%;
+.parallax-caption h2 {
   font-size: 1.5em;
   font-weight: 800;
   color: var(--color-1);
@@ -428,13 +447,14 @@ footer {
   .dropdown-item-container {
     position: absolute;
     width: 100%;
+    transform: translateY(10px);
     scale: 0;
     visibility: 0;
     transition: all .3s ease;
   }
   
   .dropdown-item-container.open {
-    translate: 0 6px;
+    translate: 0 1.375em;
     display: block;
     scale: 1;
     visibility: 1;
@@ -453,7 +473,9 @@ footer {
     background-color: transparent;
   }
 
-  .parallax-caption span {
+  .parallax-caption h2 {
+    width: fit-content;
+    margin: 0 auto;
     padding: 1em 2em;
     background-color: var(--color-2);
   }
@@ -472,17 +494,23 @@ footer {
   .services p:nth-child(1) {
     font-size: 1.25em;
   }
-}
 
-@media screen and (min-width: 700px) {
-  .logo img {
-    width: 75px;
-    outline: 5px solid var(--color-2);
-    outline-offset: -4px;
+  .service {
+    padding: 0;
+  }
+
+  .service h3 {
+    padding: 0 0 1em 0;
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
+  .logo h1 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 950px) {
   .services {
     display: flex;
     flex-direction: row-reverse;
@@ -494,6 +522,15 @@ footer {
     flex-grow: 1;
     text-align: end;
   }
+
+  .service {
+    margin: 0 0 0 1em;
+    padding: 1em 0;
+  }
+
+  .service h3 {
+    padding: 0 0 1em 0;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -503,10 +540,7 @@ footer {
   }
 
   .color-picker {
-    top: -1em;
-  }
-
-  .color-picker {
     position: absolute;
+    translate: 0 -1em;
   }
 }

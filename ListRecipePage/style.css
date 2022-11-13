@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-1: #41444B;
+  --color-2: #F9F9F9;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .2); 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-1); 
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+input, a, button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 1em;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1em;
+  transition: all .3s ease;
+}
+
+a, button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  text-decoration: none;
+  outline: none;
+  color: var(--color-1);
+  background-color: var(--color-2);
+  border: 2px solid var(--color-1);
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+a:hover, button:hover,
+a:active, button:active,
+a:focus, button:focus {
+  background-color: var(--color-1);
+  color: var(--color-2);
+}
+
+h1 { font-weight: 900; }
+
+h2 {
+  margin-bottom: 1em;
+  padding: 2em 1em;
+  border-radius: 0 0 20px 20px;
+  color: var(--color-2);
+  background-color: var(--color-1);
+  font-weight: 700;
+  text-align: center;
+}
+
+h3 { font-weight: 500; }
+
+.search-bar {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-input {
+  flex-grow: 1;
+}
+
+.recipes-list {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+.recipe-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  outline: 3px solid var(--color-1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.recipe-container h3 {
+  padding: 1em;
+  text-align: center;
+}
+
+.recipe-container a {
+  width: fit-content;
+  margin: 1em;
+}
+
+img {
+  width: 100%;
+  max-width: 500px;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 2/1;
+}
+
+@media screen and (min-width: 500px) {
+  .recipes-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .search-bar {
+    padding: 1em 2em;
+  }
+
+  .recipes-list {
+    padding: 2em;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+  }
+}
