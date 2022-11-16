@@ -1,5 +1,5 @@
-// const API_KEY = '320e0fbf344c463793cf046bdff36de8';
-const API_KEY = '156b4218b04147e690781d4aff77412c';
+const API_KEY = '320e0fbf344c463793cf046bdff36de8';
+// const API_KEY = '156b4218b04147e690781d4aff77412c';
 
 $( window ).on( "load", function() {
   console.log( "window loaded" );
@@ -191,6 +191,8 @@ const getTasteWidget = id => {
         }
       };
 
+      console.log(config);
+
       $('#tasteContainer').html('').append(`<canvas id=tasteVisualization></canvas>`)
 
       new Chart($('#tasteVisualization'), config);
@@ -272,7 +274,7 @@ const getRecipe = q => {
   $.ajax({
     url: `https://api.spoonacular.com/recipes/search?apiKey=${API_KEY}&number=1&query=${q}`,
     success: function(res) {
-      console.log(res);
+      // console.log(res);
       $('.recipe-title').html(res.results[0].title);
       $('.recipe-img > img').attr({
         'src': `${res.baseUri}${res.results[0].image}`,
